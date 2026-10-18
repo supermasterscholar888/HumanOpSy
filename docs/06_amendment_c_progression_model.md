@@ -1,12 +1,12 @@
 # BIOHACK OS — AMENDMENT C
 ## Progression Model v2
-File: docs/06_amendment_c_progression_model.md | Version: 0.1 | Last updated: 2026-10-03
-**Version 0.1 — DRAFT for owner review. Not authoritative until the owner approves it.**
+File: docs/06_amendment_c_progression_model.md | Version: 1.0 | Last updated: 2026-10-03
+**Version 1.0 — APPROVED by the owner on 2026-10-03. Authoritative wherever it conflicts with documents 01, 02 and 04.**
 
 Amends: Product Bible v1.0 (Principle 2, Rule 1, sections 4 and 6, Pillars 3 and 4, Weaknesses 1, 3 and 5); Architecture v1.0 (Part 6 and Part 10); Amendment B (unlock architecture).
 Depends on: documents 01 to 05, especially Capability Framework Principles III, IV and IX.
-Resolves: OQ-001 to OQ-005 (owner answers recorded), and proposes resolutions for OQ-006, OQ-007 and OQ-008.
-Once approved, this amendment is authoritative wherever it conflicts with documents 01, 02 and 04.
+Resolves: OQ-001 to OQ-008 and OQ-028 to OQ-030.
+This amendment is authoritative wherever it conflicts with documents 01, 02 and 04. The edits it requires in those documents (section 13) have not been applied yet; until they are, this amendment takes precedence.
 
 ---
 
@@ -126,7 +126,7 @@ A layer's window length (7, 10, 14, 21, 21, 30, 30 and 45 days for Layers 1 to 8
 Because the thresholds are below 100%, ordinary life is absorbed without any special rule. For a user otherwise at 100%, an 80% threshold tolerates 1 missed day in a 7-day window, 2 in 10 days, 2 in 14 days, 4 in 21 days; an 82% threshold tolerates 5 in 30 days; and an 85% threshold tolerates 6 in 45 days. Nothing resets.
 
 ### 7.5 Excluded days
-A user may declare, on the same day or up to 3 days later, that no plan could be followed (for example a hospital stay or an emergency). That day is excluded. As a default, excluded days may stretch a window by at most 20% of its length. Beyond that, the window is marked "insufficient data," eligibility is not evaluated, and the AI opens a conversation about what is happening. The 3-day and 20% figures are defaults to be tuned.
+A user may declare, on the same day or up to 3 days later, that no plan could be followed (for example a hospital stay or an emergency). That day is excluded. As a default, excluded days may stretch a window by at most 20% of its length. Beyond that, the window is marked "insufficient data," eligibility is not evaluated, and the AI opens a conversation about what is happening. The 3-day and 20% figures are defaults that can be tuned later with real usage data.
 
 ### 7.6 Evidence beats counting
 Compliance never advances a user on its own. The capability evidence required by Amendment B still applies, and high compliance with contradicting evidence triggers a protocol review, not an unlock. This extends to Layers 1 and 2, where the evidence is self-reported measures such as wake-time variation and morning energy.
@@ -147,7 +147,7 @@ A disruption is any recorded event that makes the normal plan inappropriate or i
 - The AI can propose one based on conversation or patterns, and sensors can propose one based on data such as signs of illness or severe sleep loss.
 - When the AI or sensors propose one, the user is always told. The proposal affects scoring only after the user confirms it.
 - For safety, the system may immediately withhold a risky item (for example hard training after severe sleep loss) and explain why, even while the proposal is awaiting confirmation. Scoring is unaffected until the user confirms.
-- If the user never answers, the day is scored against the plan that was actually shown. This default is open for review.
+- If the user never answers, the day is scored against the plan that was actually shown.
 
 ### 9.3 Day modes
 - **Full:** the normal prescribed plan.
@@ -217,6 +217,7 @@ The capability targets in Amendment B are unchanged. These rules change:
 **Architecture:** replace the regression and adaptive-unlock parts of Part 6; add the events in section 12 to Part 10; cross-reference day modes in Part 4.
 **Amendment B:** replace "Updated Unlock Architecture"; delete the conditional advancement sentence in Layer 3; delete the "at least 5 logged days" rule in Layer 1.
 **Unchanged:** documents 03 and 05.
+**When these edits are applied:** together with the edits from Amendment D, in one consolidation pass that raises documents 01, 02, 03 and 04 to version 1.1.
 
 ## 14. Examples
 1. **A hangover.** At 11 a.m. the user marks a disruption: alcohol and poor sleep. The day becomes Recovery. The plan is rest, fluids, food and an early night, and the user completes all of it. The day scores 100%. The Digital Twin records the sleep debt, so the next day's plan favors recovery and training is rescheduled.
@@ -224,8 +225,8 @@ The capability targets in Amendment B are unchanged. These rules change:
 3. **Placement without labs.** A user describes steady routines but has no lab results. Layers 1 and 2 are Provisional and the user starts at Layer 3, unconfirmed. Bloodwork is the first priority and Layers 4 and above are readable only.
 4. **A satisfied user.** A user is Established at Layer 3 and is offered Layer 4. They decline. The system does not ask again for 30 days. It keeps maintaining and monitoring their capabilities and applies the ladder if they weaken.
 
-## 15. For owner confirmation
-The owner has agreed to the principles above. These specific mechanisms are new in this draft and need confirmation:
+## 15. Owner approval
+On 2026-10-03 the owner approved all eleven mechanisms below, together with the principles above:
 1. The regression ladder (7, 14, 21 and 30 counted days) replacing both earlier versions.
 2. Full credit for completing an adapted plan, with excluded days limited to a 20% stretch.
 3. Counting unlogged, undeclared days as zero.
@@ -238,7 +239,8 @@ The owner has agreed to the principles above. These specific mechanisms are new 
 10. Keeping the name of Principle 2.
 11. What happens if the user never answers an AI or sensor disruption proposal (section 9.2).
 
-Open items: the numeric defaults above (OQ-029), erasure rights versus immutable events (OQ-027), unanswered disruption proposals (OQ-028), how out-of-scope users are told (section 6.3), user-facing wording for layer statuses (screen design), minors (OQ-014), and how all this becomes a simple daily screen (OQ-015 and OQ-016).
+Open items that remain: erasure rights versus immutable events (OQ-027), how out-of-scope users are told (OQ-031, section 6.3), user-facing wording for layer statuses (screen design), minors (OQ-014), and how all this becomes a simple daily screen (OQ-015 and OQ-016). The numeric defaults are approved as defaults and can be tuned later.
 
 ## Change log
 - Version 0.1 (2026-10-03): first draft, awaiting owner review. Becomes 1.0 when approved.
+- Version 1.0 (2026-10-03): approved by the owner. All eleven mechanisms in section 15 accepted. No text changes other than status and approval notes.
