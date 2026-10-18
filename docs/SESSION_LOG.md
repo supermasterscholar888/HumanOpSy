@@ -1,5 +1,5 @@
 # SESSION LOG
-Version: 4 | Last updated: 2026-10-03 (the version rises by one each time an entry is added)
+Version: 5 | Last updated: 2026-10-03 (the version rises by one each time an entry is added)
 
 This file is append-only. Add new entries at the bottom and never edit old ones. Every working session, in claude.ai chat or Claude Code, ends with a new entry. Chat history itself is not stored, so this log is how a future session learns what happened.
 
@@ -58,3 +58,13 @@ Proposals not confirmed: the full scheme in CLAUDE.md section 15 (whole-number v
 Files changed: CLAUDE.md (version 4), docs/OPEN_QUESTIONS.md (version 4), docs/SESSION_LOG.md (version 4); the Amendment C file was renamed to docs/06_amendment_c_progression_model.md.
 Open questions added: none.
 Next: the owner reviews the Amendment C draft and answers OQ-030, then decides OQ-025.
+
+## 2026-10-03 — claude.ai chat — Amendment C approved and Amendment D draft
+Goal: record the owner's approval of Amendment C and draft the scope and vision amendment.
+Decisions made (confirmed by the owner): all eleven mechanisms of Amendment C were approved, so it is version 1.0 and authoritative. The owner chose to take no action on the personal-details item (OQ-025), which is now parked.
+Proposals not confirmed: the nine items in section 11 of the Amendment D draft (OQ-032).
+Files changed: docs/06_amendment_c_progression_model.md (version 1.0); new docs/07_amendment_d_scope_and_vision.md (version 0.1, draft); CLAUDE.md, docs/OPEN_QUESTIONS.md and docs/SESSION_LOG.md (version 5).
+Open questions added or resolved: resolved OQ-006, OQ-007, OQ-008, OQ-028, OQ-029, OQ-030; parked OQ-025; added OQ-032 and OQ-033.
+Repository check: CLAUDE.md, OPEN_QUESTIONS.md and SESSION_LOG.md were read from GitHub and are at version 4, matching what was produced. Documents 01 to 05 and the README were not re-read this session. Document 06 could not be checked because its link was not provided.
+Correction to the first entry: its reference to CLAUDE.md section 7 for the safety rules should read section 9.
+Next: the owner reviews the Amendment D draft and answers OQ-032. Then the consolidation pass (documents 01 to 04 and the README to version 1.1), then the document 05 revision.
