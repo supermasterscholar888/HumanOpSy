@@ -1,5 +1,5 @@
 # OPEN QUESTIONS
-Version: 4 | Last updated: 2026-10-03
+Version: 5 | Last updated: 2026-10-03
 
 This file lists every unresolved question, conflict between documents, and known error in the Biohack OS project. Each item has a stable ID that other files can refer to.
 
@@ -14,52 +14,34 @@ How to use it:
 ## A. Awaiting the owner
 
 ### OQ-027 — Immutable events versus rights to erase personal data
-- Source: Architecture Appendix A3 and Part 10 (events are immutable); the global scope decision; Amendment C draft section 12.
+- Source: Architecture Appendix A3 and Part 10 (events are immutable); the global scope decision; Amendment C section 12.
 - Status: Open.
 - Question: Laws such as the GDPR and India's DPDP Act give people rights to have their data erased. How can the product keep an immutable event history and still let users delete their data?
 - Note: Possible approaches include encrypting each user's events so that deleting the key makes them unreadable, or allowing user-requested deletion as a controlled exception. Neither is decided. This should be settled in the technical architecture spec before any storage design.
 
-### OQ-028 — Unanswered disruption proposals
-- Source: Amendment C draft section 9.2.
-- Status: Awaiting owner.
-- Question: When the AI or sensors propose a disrupted day and the user never confirms or rejects it, what happens?
-- Draft default: The day is scored against the plan that was actually shown to the user.
-
-### OQ-029 — Numeric defaults in Amendment C
-- Source: Amendment C draft sections 5.3, 6.5, 7.5 and 10.
-- Status: Awaiting owner. These can be tuned later with real usage data.
-- Values: late declaration of an excluded day within 3 days; excluded days may stretch a window by at most 20%; offers do not repeat within 30 days; a user is "returning" after more than 14 days away; the regression ladder at 7, 14, 21 and 30 counted days and the 60% line.
-
-### OQ-030 — Approval of the Amendment C mechanisms
-- Source: Amendment C draft section 15 (eleven items).
-- Status: Awaiting owner. The amendment is not authoritative until approved.
-
 ### OQ-031 — How out-of-scope users are told
-- Source: Amendment C draft section 6.3; the scope boundary in CLAUDE.md section 9.
+- Source: Amendment C section 6.3; Amendment D section 7.
 - Status: Open.
 - Question: When intake shows major capability loss, what does the product say and offer? For example, it could explain that the product is not designed for their situation, point to clinical care, and perhaps allow read-only education.
 
-## B. Conflicts between documents
+### OQ-032 — Approval of the Amendment D mechanisms
+- Source: Amendment D draft section 11 (nine items).
+- Status: Awaiting owner. The amendment is not authoritative until approved.
 
-### OQ-006 — Regression rules
-- Source: Product Bible section 6 versus Architecture Part 6. Amendment B is silent.
+### OQ-033 — First launch regions and languages
+- Source: Amendment D section 5.
 - Status: Open.
-- Question: Product Bible section 6 warns after 7 days below 60% and enters regression mode after 14 days with a 7-day recovery window. Architecture Part 6 uses 7, 14, 21 and 30 days, with demotion at 30. Which applies, and how does it interact with the owner's "no reset streak" decision?
-- Note: The Amendment C draft (section 10.2) proposes one graduated ladder that replaces both versions. Pending owner approval (OQ-030).
+- Question: Which country or region, and which language, does the product launch in first? The first regional adapter has to be built and legally reviewed for it.
 
-### OQ-007 — Layer 8 evidence window
-- Source: Product Bible Pillar 4 (30 days) versus Product Bible section 6 and Amendment B (45 days).
-- Status: Open. Amendment B is authoritative, so 45 days applies until changed. The Amendment C draft confirms 45 counted days (section 11), pending approval.
-
-### OQ-008 — Verified versus self-reported thresholds
-- Source: Product Bible Weakness 2 (75% verified, 85% self-reported) versus Amendment B (flat 80%).
-- Status: Open. The Amendment C draft (section 7.7) proposes not adopting the 75% / 85% split and using one threshold with verified data counting as stronger evidence. Pending approval.
+## B. Conflicts between documents
 
 ### OQ-009 — BMI bands in the Critical Threshold Layer
 - Source: Document 05, Metabolic Regulation Tier 3 (BMI 16.5 to 18.0) versus Structural Integrity Tier 3 (BMI 18.5 or less).
 - Status: Open.
 - Question: Why does the Metabolic band stop at 18.0 when the standard underweight cutoff is 18.5? A user at exactly 18.0 sits on the edge.
 - Claude recommendation (unconfirmed): Extend the Metabolic Tier 3 band to 18.5 and re-check every threshold for similar gaps.
+
+(OQ-006, OQ-007 and OQ-008 were resolved by Amendment C. See the Resolved section.)
 
 ## C. Undecided design questions
 
@@ -107,18 +89,18 @@ How to use it:
 ## D. Corrections to existing files
 
 ### OQ-020 — Errors in the Architecture document
-- Status: Known error. Not yet fixed.
+- Status: Known error. Corrections proposed in the Amendment D draft (section 8.1), pending approval.
 - Part 2 infers a user's skin tone from their location. Skin type should be stated by the user, never inferred.
 - Part 6 says methylcobalamin is preferred for South Asian heritage because of MTHFR variants. The evidence does not support this, and it breaks the rule that claims need documented science.
 - Part 2 says "Product Engine" where it means "Protocol Engine".
 
 ### OQ-021 — India-specific content
 - Source: global scope decision.
-- Status: Known error. Not yet fixed.
+- Status: Known error. Regional adapters and edits proposed in the Amendment D draft (sections 5 and 10), pending approval.
 - India is built into Product Bible Pillar 10 (prices in rupees), the discovery stage keyword, Weakness 4 (Indian brands), Architecture Part 2 (a Pune example), and Part 12 (Indian labs as the first integration). Document 05 mixes measurement units and has no country handling for crisis lines.
 
 ### OQ-022 — Scope classification is not in a committed document
-- Status: Known error. Not yet fixed.
+- Status: Known error. The full classification is written into the Amendment D draft (section 7), pending approval.
 - The four criteria and the longer lists of major and minor capability loss exist only in chat. CLAUDE.md section 7 holds a condensed version, and the README holds a shorter one. The README also wrongly says document 05 contains the scope definition. Commit the full classification into Amendment D.
 
 ### OQ-023 — README is out of date
@@ -137,20 +119,22 @@ How to use it:
 
 ### OQ-025 — Owner's personal details in a public repository
 - Source: personal details about the owner appear in Product Bible section 5 and Weakness 6, in Document 05 (Metabolic Regulation), and in the prototype (its AI prompt and layer text). This entry deliberately does not repeat them.
-- Status: Open. The repository is currently public.
+- Status: Parked. On 2026-10-03 the owner decided to take no action for now. The repository is public.
 - Problem: Editing the files will not remove the earlier text from the repository's commit history.
 - Options: (a) replace those passages with a generic example persona, and recreate the repository with the cleaned files if removing the history matters; (b) make the repository private, which stops Claude chat from fetching raw URLs unless the owner pastes documents or uses an authenticated integration.
 - Claude recommendation (unconfirmed): Option (a), because the workflow depends on public raw URLs and generic personas are better documentation anyway. The owner should decide how much the existing history matters.
 
 ### OQ-026 — Document 03 has 18 definitions, not 19, and "Identity" is missing
 - Source: Human Capability Framework section 2; the README and earlier summaries say "19 definitions".
-- Status: Known error. Not yet fixed.
+- Status: Known error. A definition is proposed in the Amendment D draft (section 8.2), pending approval.
 - Problem: The original brief asked for 19 terms including "Identity". Document 03 defines 18 terms (it added "Sub-Capability" but never defined "Identity"). "Identity" is used elsewhere: the Digital Twin Identity domain, Product Bible principle 5, and the Identity Coherence sub-capability.
 - Claude recommendation (unconfirmed): Add a definition of "Identity" in Amendment D, keeping it distinct from Identity Coherence, and correct the count in the README.
 
 ## E. Parked by owner decision
 - P-1 Subscription and business model (Product Bible Pillar 10, Rule 8, Weakness 8, Architecture critique 6). When work resumes, pricing must not depend on layer position, because users can be placed above Layer 1. The principle that progression cannot be purchased stays.
 - P-2 Community platform (Product Bible Pillar 11, Weakness 7, Architecture critique 4). Deferring it accepts a retention risk, because social accountability strongly predicts whether people keep up habits. Social Capacity remains a measured capability and is unaffected.
+
+- P-3 Personal details in public files (OQ-025). The owner decided on 2026-10-03 to take no action for now. New files should still avoid personal details (CLAUDE.md section 14).
 
 ## Resolved
 
@@ -169,8 +153,27 @@ Decision: Yes. Provisional placement after onboarding, with a confirmation perio
 ### OQ-005 — Resolved 2026-10-03
 Decision: Amendment C is written first. The owner left the choice to Claude, who recommended C.
 
+### OQ-006 — Resolved 2026-10-03
+Decision: One regression ladder replaces both earlier versions: Notice after 7 counted days below 60%, Stabilize after 14, Rebuild after 21, and Step back only after 30 counted days with weakened evidence and no recovery trend. Recorded in Amendment C (version 1.0), section 10.2.
+
+### OQ-007 — Resolved 2026-10-03
+Decision: The Layer 8 window is 45 counted days. Pillar 4's 30 days is corrected in the consolidation pass. Recorded in Amendment C, section 11.
+
+### OQ-008 — Resolved 2026-10-03
+Decision: The 75% / 85% split is not adopted. Each layer has one threshold, and verified data counts as stronger evidence. Recorded in Amendment C, section 7.7.
+
+### OQ-028 — Resolved 2026-10-03
+Decision: If the user never answers an AI or sensor disruption proposal, the day is scored against the plan that was actually shown. Recorded in Amendment C, section 9.2.
+
+### OQ-029 — Resolved 2026-10-03
+Decision: The numeric defaults (3-day late declaration, 20% stretch, 30-day offer interval, 14-day return threshold, ladder thresholds) are approved as defaults and can be tuned with real usage data. Recorded in Amendment C.
+
+### OQ-030 — Resolved 2026-10-03
+Decision: The owner approved all eleven mechanisms in Amendment C section 15. Amendment C is version 1.0 and authoritative.
+
 ## Version history
 - Version 1 (2026-10-03): first list, OQ-001 to OQ-025.
 - Version 2 (2026-10-03): added OQ-026 and made OQ-025 neutral.
 - Version 3 (2026-10-03): resolved OQ-001 to OQ-005 and added OQ-027 to OQ-031.
 - Version 4 (2026-10-03): added version numbers.
+- Version 5 (2026-10-03): resolved OQ-006 to OQ-008 and OQ-028 to OQ-030 (Amendment C approved); parked OQ-025; added OQ-032 and OQ-033 (Amendment D draft).
