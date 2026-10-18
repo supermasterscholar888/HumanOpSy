@@ -1,5 +1,5 @@
 # CLAUDE.md — HumanOpSy (Biohack OS)
-Version: 4 | Last updated: 2026-10-03
+Version: 5 | Last updated: 2026-10-03
 
 ## 0. How to use this file
 - Read order for any new session: this file, README.md, the last entry of docs/SESSION_LOG.md, docs/OPEN_QUESTIONS.md, and then only the documents your task needs.
@@ -18,26 +18,27 @@ Version: 4 | Last updated: 2026-10-03
 - The owner is a student with no professional experience yet and builds with AI assistance. Explain engineering choices in plain language and give reasons. The owner calls the product a SaaS product, but the business model is paused (section 10).
 - The owner wants honest criticism, not agreement. Answers should be detailed but written in clear, complete sentences. The owner has said that fragments, arrows and shorthand make responses hard to understand.
 - Tools: claude.ai chat is used for documentation, architecture and planning. Claude Code is used for building code from finalized documents. The owner also discusses ideas with another AI tool (ChatGPT) and pastes its output or a compressed prompt. Engage with the reasoning in those pastes and challenge it.
-- Repository: github.com/supermasterscholar888/HumanOpSy, public as of 2026-10-03 (see OQ-025). The owner commits through the GitHub web interface and started with no GitHub experience, so explain git steps plainly if asked.
-- Claude chat cannot push to GitHub or read private repositories. It reads files only from raw URLs that the owner pastes into the chat: https://raw.githubusercontent.com/supermasterscholar888/HumanOpSy/main/<path>. Normal GitHub pages are often blocked to AI fetch tools, and fetches sometimes fail with server errors. If a fetch fails, say so and ask the owner to paste the text. Never reconstruct a document from memory.
+- Repository: github.com/supermasterscholar888/HumanOpSy, public as of 2026-10-03 (personal-details cleanup is parked, OQ-025). The owner commits through the GitHub web interface and started with no GitHub experience, so explain git steps plainly if asked.
+- Claude chat cannot push to GitHub or read private repositories. It reads files from links that the owner pastes into the chat. Raw links have the form `https://raw.githubusercontent.com/supermasterscholar888/HumanOpSy/main/PATH`, where PATH is the file path. Normal GitHub file pages have also worked recently, so either form can be pasted. Fetches sometimes fail with server errors, and only links that appear in the chat can be opened. If a fetch fails, say so and ask the owner to paste the text. Never reconstruct a document from memory.
 - A separate side thread explored funding options for the project (Indian government schemes, accelerators and fellowships). It is not part of the product specification and is not stored in the repository. The one-line summary is in docs/SESSION_LOG.md.
 
 ## 3. Current phase and status
-- Complete (version 1.0): documents 01 to 05 and the README. A plain-language dictionary PDF exists (repository location TBD).
-- Product Bible review: on 2026-10-03 the owner confirmed all ten review points, the answers to OQ-001 to OQ-005, and the one-by-one process. Nothing from the review is in the approved documents yet.
-- In progress: docs/06_amendment_c_progression_model.md is a DRAFT awaiting owner review. It is not authoritative until approved. It covers layer participation, placement, progress measurement, disruptions and regression.
-- Pending documents: Amendment D (scope and vision), a revision of document 05, the technical architecture spec, the screen design document, the capability-protocol library, the knowledge graph spec and the build sequence.
+- Complete (version 1.0): documents 01 to 05, the README and Amendment C (document 06, approved 2026-10-03). A plain-language dictionary PDF exists (repository location TBD).
+- The Product Bible review: on 2026-10-03 the owner confirmed all ten review points. Amendment C records the progression decisions and is authoritative. The edits it requires in documents 01, 02 and 04 have not been applied yet.
+- In progress: docs/07_amendment_d_scope_and_vision.md is a DRAFT awaiting owner review. It is not authoritative until approved. It covers the coach removal, parked items, global scope, explanation depth, the scope classification and corrections.
+- Pending: the consolidation pass (apply Amendments C and D to documents 01 to 04 and the README, producing version 1.1), a revision of document 05, the technical architecture spec, the screen design document, the capability-protocol library, the knowledge graph spec and the build sequence.
 - The prototype is an outdated demo of the old habit-list model and must not be used as a base for production.
 
 ## 4. Repository map and document index
-Structure: README.md and CLAUDE.md at the root; docs/ for documents 01 to 05, SESSION_LOG.md and OPEN_QUESTIONS.md; prototype/ for the demo.
+Structure: README.md and CLAUDE.md at the root; docs/ for the numbered documents, SESSION_LOG.md and OPEN_QUESTIONS.md; prototype/ for the demo.
 - README.md: overview, document index, dependency map, session protocol. Partly outdated (OQ-023).
-- docs/01_product_bible_v1.md: constitutional product document. Sections: 1 vision, 2 design principles, 3 twelve pillars, 4 user journey, 5 personalization, 6 progression, 7 AI philosophy, 8 future ecosystem, 9 non-negotiable rules, 10 weaknesses. Status: version 1.0, under review, amendments C and D pending. Depends on nothing.
+- docs/01_product_bible_v1.md: constitutional product document. Sections: 1 vision, 2 design principles, 3 twelve pillars, 4 user journey, 5 personalization, 6 progression, 7 AI philosophy, 8 future ecosystem, 9 non-negotiable rules, 10 weaknesses. Status: version 1.0, amended by C (approved) and D (draft); edits not yet applied. Depends on nothing.
 - docs/02_architecture_v1.md: intelligence architecture. Starts with Appendix A (seven amendments to document 01), then Parts 1 to 12 and a final critique. Status: version 1.0, with known errors (OQ-020). Depends on 01.
 - docs/03_human_capability_framework_v1.md: constitutional capability model. Contains the definitions, six domains, hierarchy, maturity model, goal mapping, life stages, Digital Twin representation, decision logic, ten constitutional principles and four self-identified challenges. Status: version 1.0. Depends on 01 and 02.
-- docs/04_amendment_b_layer_capability_reconciliation.md: authoritative for layer progression and unlock evidence. Status: version 1.0, to be extended by Amendment C. Depends on 01, 02 and 03.
+- docs/04_amendment_b_layer_capability_reconciliation.md: authoritative for layer progression and unlock evidence. Status: version 1.0, amended by Amendment C (its unlock architecture and Layer 3 fallback are superseded). Depends on 01, 02 and 03.
 - docs/05_critical_threshold_layer_v1.md: the Safety Filter's numeric thresholds. Status: version 1.0, first draft, NOT physician-reviewed. Depends on 02 and 03.
-- docs/06_amendment_c_progression_model.md: DRAFT amendment on progression: layer visibility, eligibility and enrollment, Steady State, baseline placement, counted days and effective compliance, day modes for disruptions, one regression ladder, returning users. Status: version 0.1, awaiting owner approval. Depends on 01 to 05.
+- docs/06_amendment_c_progression_model.md: Amendment C, progression model v2: layer visibility, eligibility and enrollment, Steady State, baseline placement, counted days and effective compliance, day modes for disruptions, one regression ladder, returning users. Status: version 1.0, APPROVED 2026-10-03, authoritative over documents 01, 02 and 04 where they conflict. Depends on 01 to 05.
+- docs/07_amendment_d_scope_and_vision.md: Amendment D, scope and vision: coach marketplace removed, parked items, global by design with regional adapters, explanation depth on demand, the full scope classification, corrections to documents 02 and 03. Status: version 0.1, DRAFT awaiting owner approval. Depends on 01 to 06.
 - docs/SESSION_LOG.md: append-only history of working sessions. Created 2026-10-03.
 - docs/OPEN_QUESTIONS.md: every unresolved question, conflict and known error, with IDs. Created 2026-10-03.
 - prototype/biohack_os.jsx: single-file React demo. Details in section 12.
@@ -63,26 +64,30 @@ Dependency graph: Biological Regulation is the substrate for everything. Restora
 Constitutional principles (document 03 section 11): I the framework is discovered, not invented; II capabilities are universal and protocols are personal; III goals define priorities, not progression; IV development has no finish line; V interventions serve capabilities and never define them; VI every recommendation traces to a sub-capability; VII uncertainty must be communicated; VIII the framework applies unchanged across all ages; IX the dependency graph must be respected; X the framework is the shared language of every component.
 Digital Twin fields per sub-capability: current capacity (as a distribution on a 0 to 100 scale), potential ceiling, trajectory, rate of improvement or decline, historical trend, prediction, evidence, confidence, uncertainty, dependencies and protocol history.
 
-## 6. The eight layers (documents 01 and 04)
+## 6. The eight layers (documents 01, 04 and 06)
 Layers are the user-facing names for eight capability-profile targets. Habit lists are default protocols and are not the definition of a layer; two users on the same layer can receive different habits. Document 02 Part 6 also gives internal capability labels for Layers 1 to 4 (Circadian Competence, Metabolic Baseline, Micronutrient Sufficiency, Hormonal Optimization). The user-facing names below stay.
-1. Survival Basics. Domains: Biological Regulation, Restorative Capacity. Targets: wake-time variation of 45 minutes or less over 14 days, average sleep of 7.5 hours or more, morning energy of 3 out of 5 or more. Unlock: 80% over 7 days with at least 5 days logged. No bloodwork.
-2. Structural Foundation. Domains: Physical Capacity, Biological Regulation, Psychological Regulation. Targets: regular movement, protein of 1.2 g/kg or more, regular meal timing, less compulsive stimulation. Unlock: 80% over 10 days.
-3. Micronutrient Fix. Domain: Biological Regulation. Targets: vitamin D 30 ng/mL or more, ferritin 15 ng/mL or more, B12 300 pg/mL or more, fasting glucose under 100 mg/dL, CRP under 3 mg/L, TSH in range. Bloodwork is required (conditional advancement with an explicit flag is allowed if bloodwork is unavailable). Unlock: 80% over 14 days.
-4. Hormonal Optimization. Domains: Biological Regulation, Physical Capacity. Targets: cortisol rhythm, HRV trend not declining over 21 days, resistance training established, energy and motivation of 3.5 out of 5 or more. Testosterone bloodwork is recommended, not mandatory. Unlock: 80% over 21 days.
-5. Cognitive Stack. Domains: Cognitive Capacity, Restorative Capacity. Targets: sustained focus of 90 minutes or more, self-rated focus of 3.5 out of 5 or more, good cognitive recovery. Unlock: 80% over 21 days.
-6. Advanced Biohacking. All domains. Targets: HRV data literacy, glucose responses logged for at least 30 meals, one comprehensive bloodwork panel confirming Layer 3 targets. Unlock: 82% over 30 days.
-7. Longevity Mode. Domains: Biological Regulation (Cellular Integrity), Physical, Cognitive. Targets: VO2max tested or estimated, 40 minutes or more of Zone 2 cardio, adequate sleep-stage data. Unlock: 82% over 30 days.
-8. Frontier Protocols. All domains at Robust to Antifragile. Entry from Layer 7: 85% over 45 days plus a comprehensive assessment. No ceiling and no completion state. Many protocols here are weekly or monthly, not daily (Bible Weakness 5).
-Unlock architecture (document 04; the Amendment C draft revises how windows are counted, separates eligibility from enrollment and proposes resolutions for OQ-006 to OQ-008, pending approval): behavioral evidence (rolling-window compliance) plus capability evidence (objective or subjective proof that the target is being approached). High compliance without capability evidence triggers a protocol review, not advancement.
+Under Amendment C (approved): windows count "counted days" (days that are not excluded; a day with no log and no declaration counts as zero); a user may stay at any layer (Steady State); layers ahead are readable but cannot be started without evidence of readiness; and a layer that becomes Ready is offered once, not forced.
+1. Survival Basics. Domains: Biological Regulation, Restorative Capacity. Targets: wake-time variation of 45 minutes or less over 14 days, average sleep of 7.5 hours or more, morning energy of 3 out of 5 or more. Unlock: 80% over 7 counted days. No bloodwork.
+2. Structural Foundation. Domains: Physical Capacity, Biological Regulation, Psychological Regulation. Targets: regular movement, protein of 1.2 g/kg or more, regular meal timing, less compulsive stimulation. Unlock: 80% over 10 counted days.
+3. Micronutrient Fix. Domain: Biological Regulation. Targets: vitamin D 30 ng/mL or more, ferritin 15 ng/mL or more, B12 300 pg/mL or more, fasting glucose under 100 mg/dL, CRP under 3 mg/L, TSH in range. Bloodwork is required, and nobody starts Layer 4 without it (Amendment C replaced the conditional advancement in document 04). Unlock: 80% over 14 counted days.
+4. Hormonal Optimization. Domains: Biological Regulation, Physical Capacity. Targets: cortisol rhythm, HRV trend not declining over 21 days, resistance training established, energy and motivation of 3.5 out of 5 or more. Testosterone bloodwork is recommended, not mandatory. Unlock: 80% over 21 counted days.
+5. Cognitive Stack. Domains: Cognitive Capacity, Restorative Capacity. Targets: sustained focus of 90 minutes or more, self-rated focus of 3.5 out of 5 or more, good cognitive recovery. Unlock: 80% over 21 counted days.
+6. Advanced Biohacking. All domains. Targets: HRV data literacy, glucose responses logged for at least 30 meals, one comprehensive bloodwork panel confirming Layer 3 targets. Unlock: 82% over 30 counted days.
+7. Longevity Mode. Domains: Biological Regulation (Cellular Integrity), Physical, Cognitive. Targets: VO2max tested or estimated, 40 minutes or more of Zone 2 cardio, adequate sleep-stage data. Unlock: 82% over 30 counted days.
+8. Frontier Protocols. All domains at Robust to Antifragile. Entry from Layer 7: 85% over 45 counted days plus a comprehensive assessment. No ceiling and no completion state. Many protocols here are weekly or monthly, not daily; Amendment C scores them against their own cadence.
+Eligibility and unlock (documents 04 and 06): behavioral evidence (effective compliance, meaning the average share of each day's prescribed plan completed over the window) plus capability evidence. High compliance without capability evidence triggers a protocol review, not advancement. Each layer has a single threshold; verified data (labs, wearables) counts as stronger evidence.
+Layer statuses (internal): Ahead, Ready, Active, Provisional, Established, Rebuilding. Steady State is a user-level choice. By default one frontier layer is active at a time.
+Placement: onboarding is a baseline assessment. Placement is provisional with a confirmation window of 7 days for Layers 1 and 2 and 14 days for Layer 3 and above. Without bloodwork, placement stops at "Layer 3, unconfirmed".
+Disruptions: the user, the AI or sensors can declare a disrupted day; AI and sensor proposals count for scoring only after the user confirms. Day modes are Full, Reduced and Recovery. Completing an adapted plan counts as a full day, and the disruption is still recorded. Days on which no plan was possible are excluded, with the window stretching by at most 20%.
+Regression ladder (Amendment C section 10.2): Notice after 7 counted days below 60%; Stabilize after 14; Rebuild after 21; Step back only after 30 counted days with weakened evidence and no recovery trend. History is never erased. After more than 14 days away the user is re-baselined for 14 days with no automatic demotion.
 Maintenance: capabilities achieved at earlier layers must be kept at Stable or above. If one drops, a Maintenance Alert is raised whatever the current layer. The Protocol Generator builds a minimum maintenance set.
-Regression (conflicting versions, OQ-006): document 01 section 6 warns after 7 days below 60%, enters regression mode after 14 days with a 7-day recovery window, then demotes. Document 02 Part 6 uses 7, 14, 21 and 30 days with demotion at 30. Both agree that history is never erased and that regression is shown honestly.
 
 ## 7. Product principles, rules and pillars (document 01)
-Design principles: 1 biological truth over engagement; 2 sequence over speed; 3 mechanism over instruction; 4 precision over comprehensiveness; 5 identity over motivation; 6 adaptation over rigidity; 7 honesty over comfort; 8 privacy as infrastructure; 9 no unnecessary gamification; 10 every screen must justify its existence. Principles 2 and 3 are being revised by owner decisions (section 10).
-Non-negotiable rules: 1 no one accesses a layer their history does not qualify them for (being revised); 2 never contradict a user-reported medical condition without acknowledging it and advising a physician; 3 every core habit needs a documented, peer-reviewed mechanism; 4 at most two unsolicited notifications per day; 5 biological data only personalizes that user's own experience, except for explicit opt-in anonymized research; 6 no cosmetic gamification; 7 every AI response is grounded in the user's actual data; 8 the free tier includes Layers 1 and 2 (parked with the business model); 9 regression is always surfaced honestly; 10 the Knowledge Base cites sources.
+Design principles: 1 biological truth over engagement; 2 sequence over speed; 3 mechanism over instruction; 4 precision over comprehensiveness; 5 identity over motivation; 6 adaptation over rigidity; 7 honesty over comfort; 8 privacy as infrastructure; 9 no unnecessary gamification; 10 every screen must justify its existence. Principle 2 was revised by Amendment C (evidence before starting, nobody forced to advance). Principle 3 is revised by the Amendment D draft (mechanism available, never imposed).
+Non-negotiable rules: 1 no one starts a layer's interventions without evidence of readiness, and no one is required to start any layer (revised by Amendment C); 2 never contradict a user-reported medical condition without acknowledging it and advising a physician; 3 every core habit needs a documented, peer-reviewed mechanism; 4 at most two unsolicited notifications per day; 5 biological data only personalizes that user's own experience, except for explicit opt-in anonymized research; 6 no cosmetic gamification; 7 every AI response is grounded in the user's actual data; 8 the free tier includes Layers 1 and 2 (parked with the business model, and to be re-examined because users can be placed above Layer 1); 9 regression is always surfaced honestly; 10 the Knowledge Base cites sources.
 Twelve pillars: Identity System, Health Profile System, Habit Engine, Layer Progression System, Protocol Engine, AI Coach, Analytics Engine, Knowledge Base, Notifications and Accountability, Subscription and Business Model (parked), Community System (deferred), Admin and Content Platform.
-Eight weaknesses and their status: 1 layer boundaries (covered by OQ-004); 2 habit verification (open); 3 returning users (open); 4 supplement access (open); 5 non-daily habits in Layers 7 and 8 (open); 6 mental health blind spot and Layer 0 (open, OQ-010); 7 social isolation (deferred); 8 revenue versus science (parked).
-User journey as documented: discovery, signup, onboarding (six screens, under four minutes, currently placing everyone at Layer 1), first week, first layer completion, three months, one year, long-term member. Onboarding is being revised (OQ-004).
+Eight weaknesses and their status: 1 layer boundaries (resolved by Amendment C); 2 habit verification (partly addressed by Amendment C section 7.7, otherwise open); 3 returning users (resolved by Amendment C); 4 supplement access (open, reshaped by regional adapters); 5 non-daily habits in Layers 7 and 8 (resolved for tracking by Amendment C); 6 mental health blind spot and Layer 0 (open, OQ-010); 7 social isolation (deferred); 8 revenue versus science (parked).
+User journey as documented: discovery, signup, onboarding (six screens, under four minutes, currently placing everyone at Layer 1), first week, first layer completion, three months, one year, long-term member. Onboarding was revised by Amendment C into a baseline assessment with provisional placement.
 AI roles as documented: Coach, Teacher, Planner, Accountability Partner, Analyst. The AI must never diagnose, advise stopping prescribed medication, call a possibly medical symptom "normal", give motivational filler, repeat advice that already failed, ignore the user's stated constraints, or claim certainty it does not have.
 
 ## 8. Intelligence architecture (document 02)
@@ -106,7 +111,7 @@ AI roles as documented: Coach, Teacher, Planner, Accountability Partner, Analyst
 - Composite rules: three Tier 3 flags in Biological Regulation count as Tier 2; psychological, sleep and hormonal Tier 3 flags together count as Tier 2; BMI of 16.5 or less, or severe hormonal suppression, blocks resistance and high-intensity training.
 - Headline thresholds in document 05 (first draft; document 05 is the only authority, so do not implement from this list): fasting glucose of 126 mg/dL or more on two measurements and vitamin D under 12 ng/mL are Tier 2; average sleep under 5 hours for 7 or more days is Tier 2; ferritin under 10 ng/mL is Tier 2; BMI of 16.5 or less is Tier 2; a PHQ-9-equivalent score of 15 or more for over 2 weeks is Tier 2; any suicidal ideation is Tier 1.
 - Supplement doses must not exceed established safe upper limits without explicit medical-supervision acknowledgment.
-- Scope: no or minor capability loss only. Major loss (out of scope) means loss that prevents independent living, makes specialist care the primary intervention, removes over half of a sub-capability's range, or makes clinical coordination the main relationship. Examples: amputation, spinal cord injury, advanced neuromuscular disease, severe organ failure, moderate to severe dementia, active psychosis, eating disorders needing inpatient care, active cancer treatment. Minor loss (in scope, with adapted protocols) includes vitamin and mineral deficiencies, Type 2 diabetes managed by lifestyle, subclinical hormone issues, PCOS, mild anaemia, mild to moderate joint problems, ADHD, early mild cognitive impairment, managed sleep apnea, and mild to moderate depression or anxiety alongside clinical care. "Minor" does not mean ignored. The full classification is not yet in a committed document (OQ-022).
+- Scope: no or minor capability loss only. A loss is major (out of scope) if it meets two or more of four criteria: it prevents independent living; specialist care is the only viable primary intervention; over half of a sub-capability's range is permanently lost; clinical coordination would be the main relationship. Examples: amputation, spinal cord injury, advanced neuromuscular disease, severe organ failure, moderate to severe dementia, active psychosis, eating disorders needing inpatient care, active cancer treatment. Minor loss (in scope, with adapted protocols) includes vitamin and mineral deficiencies, Type 2 diabetes managed by lifestyle, subclinical hormone issues, PCOS, mild anaemia, mild to moderate joint problems, ADHD, early mild cognitive impairment, managed sleep apnea, and mild to moderate depression or anxiety alongside clinical care. "Minor" does not mean ignored. The full classification is written in the Amendment D draft, section 7 (OQ-022), pending approval.
 - All document 05 thresholds MUST be reviewed by a qualified physician before any launch. Crisis flows must be reviewed by a human and tested before release.
 
 ## 10. Decisions
@@ -115,32 +120,35 @@ CLOSED (do not reopen without strong justification):
 - Goals set priorities, never progression. The same framework applies to every goal and life stage.
 - Six domains are the minimal complete set, and no seventh exists.
 - The dependency order in section 5 must be respected.
-- Data is event-sourced and immutable.
+- Data is event-sourced and immutable (the conflict with erasure rights is open, OQ-027).
 - The eight layer names stay as the user-facing structure, and internally the system reasons in capability language.
 - Layer 3 needs objective bloodwork evidence, and Layer 8 has no completion state.
 - Every recommendation traces to a sub-capability, uncertainty is always communicated, and there is no cosmetic gamification.
 - The Safety Filter is independent and can veto any output.
 - Scope is no or minor capability loss.
-OWNER CONFIRMED, NOT YET IN APPROVED DOCUMENTS (binding intent; the Amendment C draft covers the progression items and Amendment D will cover the scope items):
-- Remove the coach marketplace, the coach tier and the mentorship track from the vision. Referral to doctors stays.
-- Users are never forced to advance and may stay at a layer (Steady State). Users can read about layers ahead in view-only mode but cannot start them without evidence of readiness.
-- No reset-to-zero streaks. Progress is judged by evidence over counted days. Disrupted days are handled by adapted plans in three day modes (Full, Reduced, Recovery), and completing an adapted plan counts as a full day. The disruption is still recorded and affects later recommendations.
-- Anyone (the user, the AI or sensors) can declare a disrupted day. The user is always told, and AI or sensor declarations count for scoring only after the user confirms.
-- Onboarding is a baseline assessment. Placement is provisional with a 7 to 14 day confirmation window and stops at "Layer 3, unconfirmed" without bloodwork.
+APPROVED 2026-10-03 AND AUTHORITATIVE (Amendment C, document 06):
+- Users are never forced to advance and may stay at a layer (Steady State). Layers ahead are readable in view-only mode, but their interventions cannot be started without evidence of readiness. A Ready layer is offered once and not repeated within 30 days.
+- No streaks. Progress is effective compliance over counted days plus capability evidence. A missed day with no declaration counts as zero, and the thresholds already tolerate ordinary misses.
+- Anyone (the user, the AI or sensors) can declare a disrupted day. AI and sensor proposals count only after the user confirms. Adapted plans (Full, Reduced, Recovery) count as full days. The disruption is still recorded.
+- Onboarding is a baseline assessment with provisional placement (7 days for Layers 1 and 2, 14 days for Layer 3 and above), capped at "Layer 3, unconfirmed" without bloodwork. Conditional advancement past Layer 3 no longer exists.
+- One regression ladder (7, 14, 21 and 30 counted days), re-baselining after 14 days away, one threshold per layer with verified data counting as stronger evidence, and non-daily protocols scored by their own cadence.
+- One active frontier layer at a time by default.
+OWNER CONFIRMED, WRITTEN ONLY IN THE AMENDMENT D DRAFT (binding intent until Amendment D is approved):
+- Remove the coach marketplace, the coach tier and the mentorship track. Referral to doctors stays.
 - Subscription and business-model work is paused. The community platform is deferred. Corporate wellness, the third-party API and the research platform are parked.
 - The product is global. Country-specific labs, laws, units and crisis lines go behind regional adapters.
 - Deep explanations appear only when the user asks.
 - Steps, sedentary time and heart rate may later inform rest advice. The first build relies on user input.
-PARKED (do not design around these yet): pricing and tiers (P-1), community features (P-2), corporate wellness, the third-party API and the research platform.
+PARKED (do not design around these yet): pricing and tiers (P-1), community features (P-2), corporate wellness, the third-party API, the research platform, and cleanup of personal details in public files (P-3, OQ-025: the owner chose to take no action).
 REMOVED FROM THE VISION: the coach marketplace.
-CLAUDE PROPOSALS AWAITING APPROVAL: the mechanisms in section 15 of the Amendment C draft (OQ-030).
+CLAUDE PROPOSALS AWAITING APPROVAL: the nine items in section 11 of the Amendment D draft (OQ-032).
 
 ## 11. Known conflicts, errors and open questions
-The full list with IDs is in docs/OPEN_QUESTIONS.md. OQ-001 to OQ-005 are resolved. Do not treat any recommendation there as a decision until the owner confirms it. Summary:
-- Awaiting the owner: OQ-025 (personal details in public files), OQ-027 (erasure rights versus immutable events), OQ-028 (unanswered disruption proposals), OQ-029 (numeric defaults), OQ-030 (approval of the Amendment C mechanisms), OQ-031 (how out-of-scope users are told).
-- Conflicts between documents: OQ-006 regression rules, OQ-007 Layer 8 window (45 days applies per document 04), OQ-008 verified versus self-reported thresholds. The Amendment C draft proposes resolutions for these three. OQ-009 (BMI bands in document 05) is still open.
+The full list with IDs is in docs/OPEN_QUESTIONS.md. OQ-001 to OQ-008 and OQ-028 to OQ-030 are resolved. Do not treat any recommendation there as a decision until the owner confirms it. Summary:
+- Awaiting the owner or open: OQ-027 (erasure rights versus immutable events), OQ-031 (how out-of-scope users are told), OQ-032 (approval of Amendment D), OQ-033 (first launch regions and languages).
+- Conflicts between documents: OQ-009 (BMI bands in document 05) is the only one left.
 - Undecided design questions: OQ-010 to OQ-019, including the Layer 0 check, the screening instrument, experimental compounds such as peptides, alcohol, minors, how the six-domain profile becomes a simple daily screen, how the habit checklist relates to the single recommended focus, bloodwork access by country, and the tech stack.
-- Corrections needed: OQ-020 errors in document 02, OQ-021 India-specific content, OQ-022 scope classification not committed, OQ-023 README out of date, OQ-024 prototype, OQ-026 document 03 has 18 definitions and not 19.
+- Corrections needed: OQ-020 errors in document 02, OQ-021 India-specific content, OQ-022 scope classification, OQ-026 the missing "Identity" definition (document 03 has 18 definitions, not 19). The Amendment D draft proposes fixes for these four. OQ-023 (README out of date) and OQ-024 (prototype) remain.
 
 ## 12. Tech stack and prototype
 - Decided at design level (document 02): event sourcing, probabilistic (Bayesian) state estimation, a versioned property-graph knowledge graph, and the language model as a swappable component.
@@ -177,17 +185,17 @@ The full list with IDs is in docs/OPEN_QUESTIONS.md. OQ-001 to OQ-005 are resolv
 - Session end: outputs are committed, the README is updated, OPEN_QUESTIONS.md is updated, and a new entry is appended to docs/SESSION_LOG.md. Chat history is not stored; the log is. Claude chat drafts the entry and the owner pastes it in.
 
 ## 16. Next steps
-1. RECOMMENDED NEXT TASK: the owner reviews the Amendment C draft (docs/06_amendment_c_progression_model.md), answers OQ-030, and approves it. Then it is committed as authoritative.
-2. Decide OQ-025 (personal details in a public repository) soon, because new files keep going into a public repository.
-3. Draft Amendment D (remove the coach marketplace, park the business model and community, global principle, fix document 02 errors, commit the scope classification, add the missing "Identity" definition).
-4. Revise document 05 (BMI bands, units, country crisis lines, alcohol threshold) and send it for physician review.
-5. Work through the remaining Bible weaknesses one at a time (OQ-010, OQ-018).
-6. Update the README to match the approved amendments (OQ-023).
-7. Write the technical architecture spec, including the stack decisions and OQ-027.
-8. Only then write the screen design document and start building with Claude Code.
+1. RECOMMENDED NEXT TASK: the owner reviews the Amendment D draft (docs/07_amendment_d_scope_and_vision.md), answers OQ-032, and approves it. Then it is committed as authoritative.
+2. Consolidation pass: apply the edits from Amendments C and D to documents 01, 02, 03 and 04 in one pass (each becomes version 1.1 with a change log), and update the README (OQ-023).
+3. Revise document 05 (BMI bands, units, country crisis lines, alcohol threshold; OQ-009, OQ-013) and send it for physician review.
+4. Work through the remaining design questions one at a time (OQ-010, OQ-011, OQ-012, OQ-018).
+5. Write the technical architecture spec, including the stack decisions, OQ-027 and OQ-033.
+6. Write the screen design document (OQ-015, OQ-016).
+7. Only then start building with Claude Code.
 
 ## Version history
 - Version 1 (2026-10-03): first short draft.
 - Version 2 (2026-10-03): expanded to a full project brief.
 - Version 3 (2026-10-03): recorded the owner's confirmations and the Amendment C draft.
 - Version 4 (2026-10-03): added version numbers, versioning rules and storage structure; renamed the Amendment C file to remove "_v2".
+- Version 5 (2026-10-03): Amendment C approved and recorded; Amendment D draft added; layers section rewritten; scope test corrected to "two or more criteria"; link format fixed.
